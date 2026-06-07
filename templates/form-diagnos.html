@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario Diagnóstico ETE</title>
+        <style >
+        </style>
+    </head>
+    <body>
+        <h1>FORMULARIO DIAGNÓSTICO</h1>
+        <form>
+            <fieldset>
+                <legend>DATOS PERSONALES</legend>
+                <div>
+                    <label>Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label>Grupo curricular:</label>
+                    <input type="text" id="grupo" name="grupo" required>
+                </div>
+                <div>
+                    <label>Correo:</label>
+                    <input type="email" id="correo" name="correo">
+                </div>
+                <p>Turno:</p> <!--Creo que para las de opción múltiple es mejor un párrafo que una label-->
+                <label><input type="radio" id="matutino" name="turno" required>Matutino</label>
+                <label><input type="radio" id="vespertino" name="turno" required>Vespertino</label>
+            </fieldset>
+            <fieldset>
+                <legend>PREGUNTAS SOBRE LA ETE</legend>
+                <div>
+                    <label>¿Cuál fue tu motivo para elegir el Estudio Técnico Especializado en Computación?</label>
+                    <input type="text" id="motivo" name="motivo" required>
+                </div>
+                <p>¿Tienes conocimientos previos sobre computación o programación?</p>
+                <label><input type="radio" id="conoc-si" name="conoc" required>Si</label>
+                <label><input type="radio" id="conoc-no" name="conoc" required>No</label>
+                <div>
+                    <label>En el caso de que si tengas, mencionalos :</label>
+                    <input type="text" id="conoc" name="cuales-conocimientos">
+                </div>
+                <p>¿Tienes actividades extra además del Estudio Técnico y la prepa?</p>
+                <br>
+                <label><input type="radio" id="act-extra-si" name="act-extra" required>Si</label>
+                <label><input type="radio" id="act-extra-no" name="act-extra" required>No</label>
+                <p>¿Cuáles?</p>
+                <input type="checkbox" id="actividades-extra-1" name="actividades-extra" value="">
+                <label for="actividades-extra-1">Actividades extracurriculares de la ENP</label>
+                <input type="checkbox" id="actividades-extra-2" name="actividades-extra" value="">
+                <label for="actividades-extra-2">Trabajo</label>
+                <input type="checkbox" id="actividades-extra-3" name="actividades-extra" value="">
+                <label for="actividades-extra-3">Asignaturas en contraturno</label>
+                <input type="checkbox" id="actividades-extra-4" name="actividades-extra" value="">
+                <label for="actividades-extra-4">Otro Estudio Técnico</label>
+                <label for="actividades-extra-5">Otra(s):</label>
+                <input type="text" id="actividades-extra-5" name="actividades-extra"> 
+                <p>De acuerdo a cómo son tus horarios, ¿podrás asistir de manera regular a las clases del ETE? (recuerda que son 2 horas diarias)</p>
+                <input type="radio" id="horas-1" name="horas" value="" required>
+                <label for="horas-1">Sí, podré assitir a las 10 horas semanales</label>
+                <input type="radio" id="horas-2" name="horas" value="" required>
+                <label for="horas-2">No, tendré que faltar 1-2 horas a la semana</label>
+                <input type="radio" id="horas-3" name="horas" value="" required>
+                <label for="horas-3">No, tendré que faltar 3-4 horas a la semana</label>
+                <input type="radio" id="horas-4" name="horas" value="" required>
+                <label for="horas-4">No, tendré que faltar más de 4 horas a la semana</label>
+            </fieldset>
+            <fieldset>
+                <legend>PREGUNTAS SOBRE ESTUDIOS</legend>
+                <p>¿Considerarías que tu grupo curricular es un grupo demandante?</p>
+                <input type="radio" id="grupo-demandante-1" name="grupo-demandante" value="" required>
+                <label for="grupo-demandante-1">Sí</label>
+                <input type="radio" id="grupo-demandante-2" name="grupo-demandante" value="" required>
+                <label for="grupo-demandante-2">No</label>
+                <p>¿Eres alumno regular?</p>
+                <label><input type="radio" id="reg-si" name="reg" required>Si</label>
+                <label><input type="radio" id="reg-no" name="reg" required>No</label>
+                <p>¿Conoces algún método de estudio?</p>
+                <label><input type="radio" id="metodo-si" name="metodo" required>Si</label>
+                <label><input type="radio" id="metodo-no" name="metodo" required>No</label>
+                <div>
+                    <label>En caso de que si, menciona los que utilizas:</label>
+                    <input type="text" id="que-metodo" name="metodos-a-usar"> 
+                </div>
+                <div>
+                    <p>En que caso de que no, selecciona que haces para estudiar:</p>
+                    <input type="checkbox" id="metodo-1" name="metodos-a-usar" value="">
+                    <label for="metodo-1">Leer</label>
+                    <input type="checkbox" id="metodo-2" name="metodos-a-usar" value="">
+                    <label for="metodo-2">Memorizar</label>
+                    <input type="checkbox" id="metodo-3" name="metodos-a-usar" value="">
+                    <label for="metodo-3">Hacer ejercicios sobre el tema</label>
+                    <input type="checkbox" id="metodo-4" name="metodos-a-usar" value="">
+                    <label for="metodo-4">Material de apoyo</label>
+                    <input type="checkbox" id="metodo-5" name="metodos-a-usar" value="">
+                    <label for="metodo-5">Cursos</label>
+                    <br>
+                    <label for="metodo-6">Otro(s):</label>
+                    <input type="text" id="metodo-6" name="metodos-a-usar">  
+                </div>
+                <div>
+                    <label>Si tú método no llegase a funcionar, ¿qué haces cuando no comprendes un tema?</label>
+                    <input type="text" id="accion" name="accion">   
+                </div> 
+            </fieldset>
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
