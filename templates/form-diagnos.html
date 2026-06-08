@@ -8,25 +8,35 @@
     </head>
     <body>
         <header>
-            <h1>Nombre del proyecto</h1>
+            <div class="head">
+                <!--logo de la enp6 y unam y titulo del sitio-->
+                <div class="head-left">
+                    <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
+                    <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
+                    <h1>Nombre del Proyecto</h1>
+                </div>
+                <!--Foto de perfil-->
+                <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
+            </div>
         </header>
         <main>
             <h2>¡Te damos la bienvenida!</h2>
             <h3>Responde este cuestionario para empezar.</h3>
             <form>
                 <fieldset>
+                    <!--Datos Personales-->
                     <legend><strong>DATOS PERSONALES</strong></legend>
-                    <div>
+                    <div class="pregunta">
                         <label>Nombre:</label><br>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
-                    <div>
+                    <div class="pregunta">
                         <label>Grupo curricular:</label><br>
                         <input type="text" id="grupo" name="grupo" required>
                     </div>
-                    <div>
-                        <label>Correo:</label><br>
-                        <input type="email" id="correo" name="correo">
+                    <div class="pregunta">
+                        <label>Número de cuenta:</label><br>
+                        <input type="text" id="nocta" name="nocta">
                     </div>
                     <div class="radio">
                         <p>Turno:</p>
@@ -35,8 +45,9 @@
                     </div>    
                 </fieldset>
                 <fieldset>
+                    <!--PREGUNTAS ACADÉMICAS-->
                     <legend><strong>PREGUNTAS ACADÉMICAS</strong></legend>
-                    <div>
+                    <div class="pregunta">
                         <label>¿Cuál fue tu motivo para elegir el Estudio Técnico Especializado en Computación?</label><br>
                         <input type="text" id="motivo" name="motivo" required>
                     </div>
@@ -45,7 +56,7 @@
                         <label><input type="radio" id="conoc-si" name="conoc" required>Si</label>
                         <label><input type="radio" id="conoc-no" name="conoc" required>No</label>
                     </div>    
-                    <div>
+                    <div class="pregunta">
                         <label>En el caso de que si tengas, mencionalos :</label><br>
                         <input type="text" id="conoc" name="cuales-conocimientos">
                     </div>
@@ -95,7 +106,7 @@
                         <label><input type="radio" id="metodo-si" name="metodo" required>Si</label>
                         <label><input type="radio" id="metodo-no" name="metodo" required>No</label>
                     </div>    
-                    <div>
+                    <div class="pregunta">
                         <label>En caso de que si, menciona los que utilizas:</label><br>
                         <input type="text" id="que-metodo" name="metodos-a-usar"> 
                     </div>
@@ -114,11 +125,12 @@
                         <label for="metodo-6">Otro(s):</label>
                         <input type="text" id="metodo-6" name="metodos-a-usar">  
                     </div>
-                    <div>
+                    <div class="pregunta">
                         <label>Si tú método no llegase a funcionar, ¿qué haces cuando no comprendes un tema?</label><br>
                         <input type="text" id="accion" name="accion">   
                     </div> 
                 </fieldset>
+                <!--boton de enviar-->
                 <button type="submit" id="boton">Enviar</button>
             </form>
         </main>
