@@ -19,10 +19,9 @@ main {
 /*logos y nombre del sistema*/
 .head-left{
     display: flex;
-    align-items: left;
+    align-items: center;
     gap: 15px;
 }
-
 /*mensajes de bienvenida y responder formulario*/
 legend, h2{
     color: #2C42B7;
