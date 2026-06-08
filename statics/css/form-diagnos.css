@@ -7,8 +7,7 @@ main {
     justify-items: center;
     align-items:center ;
 }
-
-/*logos y nombre del sistema*/
+/*logos, nombre del sistema, foto de perfil*/
 .head{
     display: flex;
     align-items: center;
@@ -17,7 +16,7 @@ main {
     color: #FFFFFF;
     padding: 22px;
 }
-
+/*logos y nombre del sistema*/
 .head-left{
     display: flex;
     align-items: left;
