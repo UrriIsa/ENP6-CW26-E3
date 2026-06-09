@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../statics/css/prof-estadisticas.css">
+        <title>Formulario Diagnóstico ETE</title>
+    </head>
+    <body>
+        <header>
+            <!--El mismo encabezado-->
+            <div class="head">
+                <!--logo de la enp6 y unam y titulo del sitio-->
+                <div class="head-left">
+                    <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
+                    <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
+                    <h1>Nombre del Proyecto</h1>
+                </div>
+                <!--Foto de perfil-->
+                <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
+            </div>
+        </header>
+        <!--Barra de navegación: estadísticas, notificaciones y registro de usuarios-->
+        <nav>
+            <!--Eventualmente cada botón llevará al lugar correcto
+                Por el momento todos llevan a esta página-->
+            <a id="boton-nav" href="./prof-estadisticas.html">Notificaciones</a>
+            <a id="boton-nav" href="./prof-estadisticas.html">Datos estadísticos</a>
+            <a id="boton-nav" href="./prof-estadisticas.html">Registro de usuarios</a>
+        </nav>
+        <main>
+            <h2>Datos estadísticos</h2>
+            <h3>Consulta las estadísticas individuales o grupales.</h3>
+            <div class="fondo">
+                <!--Habrá código PHP que realice las consultas correspondientes en la base de datos
+                y que solamente muestre los grupos y estudiantes que sean necesarios-->
+                <div class="grupo">
+                    <p>Grupo 61-D</p>
+                    <form> <!--Le dirá al servidor cuál grupo/estudiante deseamos consultar en detalle-->
+                        <!--Se me ocurrió hacerlo de esta manera: -->
+                        <input type="hidden" name="grupo" value="61-D"> <!--Los values serán los ID del grupo/estudiante-->
+                        <button type="button" id="boton-estadistica-blanco"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-blanco.svg"></button>
+                        <!--Un form por grupo/estudiante.
+                        Aunque también descubrí que se podía hacer poniendo un montón de botones submit en un solo form,
+                        cada uno con diferente valor...
+                        Tal vez haya otra manera-->
+                    </form>
+                </div>
+                <div class="estudiante">
+                    <p>Jaimito</p>
+                    <form> <!--Lo mismo de arriba-->
+                        <input type="hidden" name="grupo" value="61-D">
+                        <button type="button" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
+                    </form>
+                </div>
+                <div class="estudiante">
+                    <p>Jaimito II</p>
+                    <form>
+                        <input type="hidden" name="grupo" value="61-D">
+                        <button type="button" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
+                    </form>
+                </div>
+                <div class="estudiante">
+                    <p>Jaimito III</p>
+                    <form>
+                        <input type="hidden" name="grupo" value="61-D">
+                        <button type="button" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
+                    </form>
+                </div>
+            </div>
+        </main>
