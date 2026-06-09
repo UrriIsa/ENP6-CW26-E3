@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    justify-items: center;
+    align-items:center ;
+}
+/*logos, nombre del sistema, foto de perfil*/
+.head{
+    display: flex;
+    align-items: center;
+    background-color: #2C42B7;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    padding: 22px;
+}
+/*logos y nombre del sistema*/
+.head-left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* Barra de navegación */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 11px;
+    background-color: #D9D9D9;
+}
+
+#boton-nav {
+    text-decoration: none;
+    color: #2C42B7;
+    font-size: large;
+    font-weight: bold;
+}
+/* Encabezados h2 y h3 */
+h2 {
+    padding: 20px;
+    color: #2C42B7;
+}
+
+h3 {
+    font-size: medium;
+    padding: 10px;
+}
+
+/*Lista grupo/estudiantes */
+.fondo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CAD8FE;
+    border-radius: 10px;
+    padding: 12px;
+    width: 90%;
+    margin: 10px;
+}
+
+.grupo {
+    background-color: #2C42B7;
+    color: #FFFFFF;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.estudiante {
+    background-color: #F4F7FF;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+/* Botones de estadística */
+#img-boton-estadistica {
+    height: 20px;
+}
+
+#boton-estadistica-azul {
+    border: 0;
+    background-color: #F4F7FF;
+    cursor: pointer;
+}
+
+#boton-estadistica-blanco {
+    border: 0;
+    background-color: #2C42B7;
+    cursor: pointer;
+}
