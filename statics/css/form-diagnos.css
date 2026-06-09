@@ -64,6 +64,13 @@ input{
     margin-left: 10px;
     height: 15px;
 }
+input[type="text"] {
+    width: 75%;
+}
+textarea {
+    width: 75%;
+    margin-left: 10px;
+}
 /*preguntas tipo radio*/
 .radio{
     border-radius: 5px;
