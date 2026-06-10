@@ -36,10 +36,10 @@
                 y que solamente muestre los grupos y estudiantes que sean necesarios-->
                 <div class="grupo">
                     <p>Grupo 61-D</p>
-                    <form> <!--Le dirá al servidor cuál grupo/estudiante deseamos consultar en detalle-->
+                    <form action="consulta.php" method="POST"> <!--Le dirá al servidor cuál grupo/estudiante deseamos consultar en detalle-->
                         <!--Se me ocurrió hacerlo de esta manera: -->
                         <input type="hidden" name="grupo" value="61-D"> <!--Los values serán los ID del grupo/estudiante-->
-                        <button type="button" id="boton-estadistica-blanco"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-blanco.svg"></button>
+                        <button type="submit" id="boton-estadistica-blanco"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-blanco.svg"></button>
                         <!--Un form por grupo/estudiante.
                         Aunque también descubrí que se podía hacer poniendo un montón de botones submit en un solo form,
                         cada uno con diferente valor...
@@ -48,16 +48,16 @@
                 </div>
                 <div class="estudiante">
                     <p>Jaimito</p>
-                    <form> <!--Lo mismo de arriba-->
-                        <input type="hidden" name="grupo" value="61-D">
-                        <button type="button" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
+                    <form action="consulta.php" method="POST"> <!--Lo mismo de arriba-->
+                        <input type="hidden" name="estudiante" value="325105660">
+                        <button type="submit" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
                     </form>
                 </div>
                 <div class="estudiante">
                     <p>Jaimito II</p>
                     <form>
                         <input type="hidden" name="grupo" value="61-D">
-                        <button type="button" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
+                        <button type="submit" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
                     </form>
                 </div>
                 <div class="estudiante">
