@@ -5,31 +5,32 @@
     {
         // $nombre = $_POST["nombre"];
         echo "sirve";
-        /*foreach($_POST as $nombre => $respuesta) {
-            echo "sirve 2";
-            $sql="INSERT INTO formulario ({$nombre}) VALUES ($respuesta)";
-            $query=mysqli_query($conexion, $sql);
-            if($query)
-            {
-                echo "<h1>FELICIDADES SI SIRVIO</h1>";
-            } else
-            {
-                echo "<h1>NO sirve</h1>";
+
+
+                // $conexion
+        // separamos claves (columnas) y valores
+        $columnas = array_keys($_POST) ; 
+        $valores = array_values($_POST) ;
+        $nombres_columnas = implode (', ', $columnas) ;
+        // grupo, nombre, nocta, ....
+        $valores_escapados = array_map(function($v) use ($conexion){
+            if(is_array($v)) {
+                return "'" . mysqli_real_escape_string($conexion, implode(', ', $v)) . "'";
+            } else {
+                return "'" . mysqli_real_escape_string($conexion, $v) . "'";
             }
-        }*/
-        
-        // Se tiene que cambiar para que añada todos los registros en un solo query
-        $sql="INSERT INTO formulario ";
-        foreach($_POST as $nombre => $respuesta) 
-        {
-            echo "sirve2";
-            $sql="INSERT INTO formulario ({$nombre})
-            VALUES ('{$respuesta}')";
-            
-            var_dump($sql);
-            $query=mysqli_query($conexion, $sql);
-            if($query)
-                echo "si";
+        } , $valores) ;
+        // mysql_escape_string($v)
+        //
+        $valores_cadena = implode(", ", $valores_escapados); 
+        $sql = "INSERT INTO formulario ($nombres_columnas) VALUES ($valores_cadena)" ;
+        var_dump($sql);
+        $resultado = mysqli_query($conexion, $sql);
+        if($resultado){
+            echo "Datos insertados correctamente" ;
+        }else{
+            echo " Error " ;
         }
+        
     }
 ?>
