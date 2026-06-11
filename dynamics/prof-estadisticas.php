@@ -1,3 +1,10 @@
+<?php
+    include 'conecta.php';
+
+    $sql="SELECT nocta, nombre FROM alumnos"; // Se cambiará por la query correcta eventualmente
+    $query=mysqli_query($conexion, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -46,27 +53,17 @@
                         Tal vez haya otra manera-->
                     </form>
                 </div>
-                <div class="estudiante">
-                    <p>Jaimito</p>
-                    <form action="consulta.php" method="POST"> <!--Lo mismo de arriba-->
-                        <input type="hidden" name="estudiante" value="325105660">
-                        <button type="submit" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
-                    </form>
-                </div>
-                <div class="estudiante">
-                    <p>Jaimito II</p>
-                    <form>
-                        <input type="hidden" name="grupo" value="61-D">
-                        <button type="submit" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
-                    </form>
-                </div>
-                <div class="estudiante">
-                    <p>Jaimito III</p>
-                    <form>
-                        <input type="hidden" name="grupo" value="61-D">
-                        <button type="button" id="boton-estadistica-azul"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-azul.svg"></button>
-                    </form>
-                </div>
+                <?php
+                    while($lista=mysqli_fetch_assoc($query)) {
+                        echo "<div class='estudiante'>";
+                            echo "<p>" . $lista['nombre'] . "</p>";
+                            echo "<form action='consulta.php' method='POST'> <!--Lo mismo de arriba-->";
+                                echo "<input type='hidden' name='estudiante' value=" . $lista['nocta'] . ">";
+                                echo "<button type='submit' id='boton-estadistica-azul'><img id='img-boton-estadistica' src='../statics/imgs/estadistica-azul.svg'></button>";
+                            echo "</form>";
+                        echo "</div>";
+                    }
+                ?>
             </div>
         </main>
     </body>
