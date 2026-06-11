@@ -1,8 +1,12 @@
 <?php
     include 'conecta.php';
 
-    $sql="SELECT nocta, nombre FROM alumnos"; // Se cambiará por la query correcta eventualmente
-    $query=mysqli_query($conexion, $sql);
+     // Se cambiará por la query correcta eventualmente
+    $sql2="SELECT grupo FROM alumnos";
+    $sql3="SELECT * FROM grupos";
+    
+    $query2=mysqli_query($conexion, $sql2);
+    $query3=mysqli_query($conexion, $sql3);
 ?>
 
 <!DOCTYPE html>
@@ -41,27 +45,37 @@
             <div class="fondo">
                 <!--Habrá código PHP que realice las consultas correspondientes en la base de datos
                 y que solamente muestre los grupos y estudiantes que sean necesarios-->
-                <div class="grupo">
-                    <p>Grupo 61-D</p>
-                    <form action="consulta.php" method="POST"> <!--Le dirá al servidor cuál grupo/estudiante deseamos consultar en detalle-->
-                        <!--Se me ocurrió hacerlo de esta manera: -->
-                        <input type="hidden" name="grupo" value="61-D"> <!--Los values serán los ID del grupo/estudiante-->
-                        <button type="submit" id="boton-estadistica-blanco"><img id="img-boton-estadistica" src="../statics/imgs/estadistica-blanco.svg"></button>
-                        <!--Un form por grupo/estudiante.
-                        Aunque también descubrí que se podía hacer poniendo un montón de botones submit en un solo form,
-                        cada uno con diferente valor...
-                        Tal vez haya otra manera-->
-                    </form>
-                </div>
                 <?php
-                    while($lista=mysqli_fetch_assoc($query)) {
-                        echo "<div class='estudiante'>";
-                            echo "<p>" . $lista['nombre'] . "</p>";
-                            echo "<form action='consulta.php' method='POST'> <!--Lo mismo de arriba-->";
-                                echo "<input type='hidden' name='estudiante' value=" . $lista['nocta'] . ">";
-                                echo "<button type='submit' id='boton-estadistica-azul'><img id='img-boton-estadistica' src='../statics/imgs/estadistica-azul.svg'></button>";
+                    /*
+                    Se realiza la consulta de todos los grupos, que se iteran en el primer while y se imprimen con otra consulta que verifica el nombre.
+                    Posteriormente, con otro while (adentro del primero), se imprimen solamente los alumnos que pertenezcan al grupo correspondiente, validándolo con otra query.
+                    */
+                    while($grupos=mysqli_fetch_assoc($query3)) {  
+                        $grupo=mysqli_fetch_assoc(mysqli_query($conexion, "SELECT grupo FROM grupos WHERE id_grupo=" . $grupos['id_grupo']));
+                        echo"<div class='grupo'>";
+                            echo"<p>" . $grupo['grupo'] . "</p>";
+                            echo"<form action='consulta.php' method='POST'>"; //Le dirá al servidor cuál grupo/estudiante deseamos consultar en detalle
+                                //Se me ocurrió hacerlo de esta manera:
+                                echo "<input type='hidden' name='grupo' value='" . $grupos['id_grupo'] . "'>";//Los values serán los ID del grupo/estudiante
+                                echo"<button type='submit' id='boton-estadistica-blanco'><img id='img-boton-estadistica' src='../statics/imgs/estadistica-blanco.svg'></button>";
+                                /*Un form por grupo/estudiante.
+                                Aunque también descubrí que se podía hacer poniendo un montón de botones submit en un solo form,
+                                cada uno con diferente valor...
+                                Tal vez haya otra manera*/
                             echo "</form>";
                         echo "</div>";
+                        $sql="SELECT nocta, nombre FROM alumnos WHERE grupo=" . $grupos["id_grupo"];
+                        $query=mysqli_query($conexion, $sql);
+                        while($lista=mysqli_fetch_assoc($query)) 
+                        {
+                            echo "<div class='estudiante'>";
+                                echo "<p>" . $lista['nombre'] . "</p>";
+                                echo "<form action='consulta.php' method='POST'> <!--Lo mismo de arriba-->";
+                                    echo "<input type='hidden' name='estudiante' value=" . $lista['nocta'] . ">";
+                                    echo "<button type='submit' id='boton-estadistica-azul'><img id='img-boton-estadistica' src='../statics/imgs/estadistica-azul.svg'></button>";
+                                echo "</form>";
+                            echo "</div>";
+                        }
                     }
                 ?>
             </div>
