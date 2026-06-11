@@ -2,7 +2,7 @@
     const DBHOST = "localhost";
     const DBUSER = "root";
     const PASSWORD = "";
-    const DB = "bd_oete";
+    const DB = "ete";
 
     function connect()
     {
