@@ -1,6 +1,7 @@
 <?php 
+
     session_start();
-    if (isset($_POST["username"]))
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]))
     {
         //Haremos la consulta en la base de datos
         require './conexion.php';
@@ -37,7 +38,7 @@
                 $_SESSION['username'] = $registro["notra"];
                 $_SESSION["rol"] = "docente";
                 setcookie("activo", $registro["notra"], time() + (86400*7)); // 1 dia = 86400 segundos, expirará en un dia
-                header("Location: ../templates/admin-usuarios/admin_general_usuarios.html");
+                header("Location: ./docente.php");
             }
             else
             {
