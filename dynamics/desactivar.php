@@ -1,7 +1,7 @@
 <?php
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT) ;
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     session_start();
-    if(isset($_COOKIE['activo']) && $_SESSION['rol'] == 'docente')
+    if(isset($_COOKIE['activo']) && $_SESSION['rol'] == 'docente' && $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST))
     {
         require './conexion.php';
         $con = connect();
