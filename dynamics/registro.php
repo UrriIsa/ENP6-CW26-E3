@@ -7,24 +7,23 @@
         //Incluímos conexion.php y designamos connect a $con
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
+        $name = $_POST["name"];
         //Quitamos espacios
-        $ins_val = "INSERT INTO alumnos (notra, contraseña, id_activo) VALUES ('$username', '$password', 1)";
+        $ins_val = "INSERT INTO alumnos(nocta, nombre, contraseña, id_activo) VALUES ('$username', '$name', '$password', 1)";
         $result = mysqli_query($con, $ins_val);
         if(!$result)
         {
-            header("Location: docente.html")
-            echo "Error al registrar";
+            echo "<h2>Error al registrar</h2>";
         }
         else
         {
-            header("Location: docente.html")
-            echo "Registro exitoso";
+            echo "<h2>Registro exitoso</h2>";
         }
     }
 
     else
     {
-        header("Location: docente.html")
         echo "No tienes permiso para acceder a esta página.";
     }
+    echo "<button><a href = '../templates/docente.html'>Regresar a la página de docente</a></button>";
 ?>
