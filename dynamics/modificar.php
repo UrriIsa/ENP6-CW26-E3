@@ -16,19 +16,17 @@
         $result = mysqli_query($con, $mod_val);
         if(!$result)
         {
-            header("Location: docente.html")
             echo "Error al modificar";
         }
         else
         {
-            header("Location: docente.html")
             echo "Modificación exitosa";
         }
     }
 
     else
     {
-        header("Location: login.html");
         echo "No tienes permiso para acceder a esta página.";
     }
+    echo "<button><a href = '../templates/docente.html'>Regresar a la página de docente</a></button>";
 ?>
