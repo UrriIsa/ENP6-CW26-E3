@@ -38,12 +38,12 @@
                     </div>
                     <div class="pregunta">
                         <label>Número de cuenta:</label><br>
-                        <input type="text" id="pa8" name="nocta">
+                        <input type="text" id="nocta" name="nocta">
                     </div>
                     <div class="radio">
                         <p>Turno:</p>
-                        <label><input type="radio" id="matutino" name="turno" value="1" required>Matutino</label>
-                        <label><input type="radio" id="vespertino" name="turno" value="2" required>Vespertino</label>
+                        <label><input type="radio" id="matutino" name="turno" value="Matutino" required>Matutino</label>
+                        <label><input type="radio" id="vespertino" name="turno" value="Vespertino" required>Vespertino</label>
                     </div>    
                 </fieldset>
                 <fieldset>
@@ -55,8 +55,8 @@
                     </div>
                     <div class="radio">       
                         <p>¿Tienes conocimientos previos sobre computación o programación?</p>
-                        <label><input type="radio" id="conoc-si" name="pa2_0" value="1" required>Si</label>
-                        <label><input type="radio" id="conoc-no" name="pa2_0" value="2" required>No</label>
+                        <label><input type="radio" id="conoc-si" name="pa2_0" value="Sí" required>Si</label>
+                        <label><input type="radio" id="conoc-no" name="pa2_0" value="No" required>No</label>
                     </div>    
                     <div class="pregunta">
                         <label>En el caso de que si tengas, mencionalos :</label><br>
@@ -64,21 +64,21 @@
                     </div>
                     <div class="radio">
                         <p>¿Tienes actividades extra además del Estudio Técnico y la prepa?</p>
-                        <label><input type="radio" id="act-extra-si" name="pa3_0" value="1" required>Si</label>
-                        <label><input type="radio" id="act-extra-no" name="pa3_0" value="2" required>No</label>
+                        <label><input type="radio" id="act-extra-si" name="pa3_0" value="Sí" required>Si</label>
+                        <label><input type="radio" id="act-extra-no" name="pa3_0" value="No" required>No</label>
                     </div>    
                     <div class="checkbox">
                         <p>¿Cuáles?</p>
-                        <input type="checkbox" id="actividades-extra-1" name="pa3_1" value="1">
+                        <input type="checkbox" id="actividades-extra-1" name="pa3_1[]" value="1">
                         <label for="actividades-extra-1">Actividades extracurriculares de la ENP</label><br>
-                        <input type="checkbox" id="actividades-extra-2" name="pa3_1" value="2">
+                        <input type="checkbox" id="actividades-extra-2" name="pa3_1[]" value="2">
                         <label for="actividades-extra-2">Trabajo</label><br>
-                        <input type="checkbox" id="actividades-extra-3" name="pa3_1" value="3">
+                        <input type="checkbox" id="actividades-extra-3" name="pa3_1[]" value="3">
                         <label for="actividades-extra-3">Asignaturas en contraturno</label><br>
-                        <input type="checkbox" id="actividades-extra-4" name="pa3_1" value="4">
+                        <input type="checkbox" id="actividades-extra-4" name="pa3_1[]" value="4">
                         <label for="actividades-extra-4">Otro Estudio Técnico</label><br>
                         <label for="actividades-extra-5">Otra(s):</label>
-                        <input type="text" id="actividades-extra-5" name="pa3_1"> 
+                        <input type="text" id="actividades-extra-5" name="pa3_2"> 
                     </div>
                     <div class="radio">
                         <p>De acuerdo a cómo son tus horarios, ¿podrás asistir de manera regular a las clases del ETE? (recuerda que son 2 horas diarias)</p>
@@ -93,15 +93,15 @@
                     </div> 
                     <div class="radio">
                         <p>¿Considerarías que tu grupo curricular es un grupo demandante?</p>
-                        <input type="radio" id="grupo-demandante-1" name="pa5" value="1" required>
+                        <input type="radio" id="grupo-demandante-1" name="pa5" value="Sí" required>
                         <label for="grupo-demandante-1">Sí</label>
-                        <input type="radio" id="grupo-demandante-2" name="pa5" value="2" required>
+                        <input type="radio" id="grupo-demandante-2" name="pa5" value="No" required>
                         <label for="grupo-demandante-2">No</label>
                     </div>
                     <div class="radio">
                         <p>¿Eres alumno regular?</p>
-                        <label><input type="radio" id="reg-si" name="pa6" value="1" required>Si</label>
-                        <label><input type="radio" id="reg-no" name="pa6" value="2" required>No</label>
+                        <label><input type="radio" id="reg-si" name="pa6" value="Sí" required>Si</label>
+                        <label><input type="radio" id="reg-no" name="pa6" value="No" required>No</label>
                     </div>
                     <div class="radio">
                         <p>¿Conoces algún método de estudio?</p>
@@ -114,18 +114,18 @@
                     </div>
                     <div class="checkbox">
                         <p>En que caso de que no, selecciona que haces para estudiar:</p>
-                        <input type="checkbox" id="metodo-1" name="pa7_2" value="1">
+                        <input type="checkbox" id="metodo-1" name="pa7_2[]" value="1">
                         <label for="metodo-1">Leer</label><br>
-                        <input type="checkbox" id="metodo-2" name="pa7_2" value="2">
+                        <input type="checkbox" id="metodo-2" name="pa7_2[]" value="2">
                         <label for="metodo-2">Memorizar</label><br>
-                        <input type="checkbox" id="metodo-3" name="pa7_2" value="3">
+                        <input type="checkbox" id="metodo-3" name="pa7_2[]" value="3">
                         <label for="metodo-3">Hacer ejercicios sobre el tema</label><br>
-                        <input type="checkbox" id="metodo-4" name="pa7_2" value="4">
+                        <input type="checkbox" id="metodo-4" name="pa7_2[]" value="4">
                         <label for="metodo-4">Material de apoyo</label><br>
-                        <input type="checkbox" id="metodo-5" name="pa7_2" value="5">
+                        <input type="checkbox" id="metodo-5" name="pa7_2[]" value="5">
                         <label for="metodo-5">Cursos</label><br>
                         <label for="metodo-6">Otro(s):</label>
-                        <input type="text" id="metodo-6" name="pa7_2">  
+                        <input type="text" id="metodo-6" name="pa7_4">  
                     </div>
                     <div class="pregunta">
                         <label>Si tú método no llegase a funcionar, ¿qué haces cuando no comprendes un tema?</label><br>
