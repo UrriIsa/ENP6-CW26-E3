@@ -21,7 +21,7 @@
             $_SESSION['username'] = $registro["nocta"];
             $_SESSION["rol"] = "alumno";
             setcookie("activo", $registro["nocta"], time() + (86400*7)); // 1 dia = 86400 segundos, expirará en un dia
-            header("Location: usuario.php");
+            header("Location: alumno.php");
         }
 
         else
@@ -37,7 +37,7 @@
                 $_SESSION['username'] = $registro["notra"];
                 $_SESSION["rol"] = "docente";
                 setcookie("activo", $registro["notra"], time() + (86400*7)); // 1 dia = 86400 segundos, expirará en un dia
-                header("Location: docente.php");
+                header("Location: ../templates/admin-usuarios/admin_general_usuarios.html");
             }
             else
             {
@@ -57,7 +57,7 @@
 
             if ($_SESSION["rol"] == "docente")
             {
-                header("Location: docente.php");
+                header("Location: ../templates/admin-usuarios/admin_general_usuarios.html");
             }
             elseif($_SESSION["rol"] == "alumno")
             {
