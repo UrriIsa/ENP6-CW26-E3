@@ -1,4 +1,5 @@
 <?php
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT) ;
     session_start();
     if(isset($_COOKIE['activo']) && $_SESSION['rol'] == 'docente')
     {
@@ -8,23 +9,21 @@
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
         //Quitamos espacios
-        $del_val = "UPDATE alumnos SET id_activo = 0 WHERE notra = '$username' AND contraseña = '$password'";
-        $result = mysqli_query($con, $del_val);
-        if(!$result)
+        
+        try
         {
-            header("Location: docente.html")
-            echo "Error al desactivar";
-        }
-        else
+            $del_val = "UPDATE alumnos SET id_activo = 2 WHERE nocta = '$username' AND contraseña = '$password'";
+            mysqli_query($con, $del_val);
+            echo "Acción realizada correctamente";
+        } catch(mysqli_sql_exception $e)
         {
-            header("Location: docente.html")
-            echo "Desactivación exitosa";
+            echo "<h1>Esa acción no se puede realizar</h1>";
         }
     }
 
     else
     {
-        header("Location: login.html");
-                echo "No tienes permiso para acceder a esta página.";
+        echo "No tienes permiso para acceder a esta página.";
     }
+    echo "<button><a href = '../templates/docente.html'>Regresar a la página de docente</a></button>";
 ?>
