@@ -14,7 +14,8 @@
         $ete = $_POST["ete"];
         //Quitamos espacios
         try {
-            $ins_val = "INSERT INTO alumnos(nocta, nombre, contraseña, grupo, plantel, id_activo) VALUES ('$username', '$name', '$password', '$grupo', '$plantel', '$ete',  1)";
+            $ins_val = "INSERT INTO alumnos(nocta, nombre, contraseña, grupo, plantel, ete, id_activo) VALUES ('$username', '$name', '$password', '$grupo', '$plantel', '$ete',  1)";
+            var_dump($ins_val);
             $result = mysqli_query($con, $ins_val);
 
         } catch(mysqli_sql_exception $e)
