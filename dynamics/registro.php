@@ -6,8 +6,8 @@
         require './conexion.php';
         $con = connect();
         //Incluímos conexion.php y designamos connect a $con
-        $username = trim($_POST["username"]);
-        $password = trim($_POST["password"]);
+        $username = $_POST["username"];
+        $password = $_POST["password"];
         $name = $_POST["name"];
         $grupo = $_POST["grupo"];
         $plantel = $_POST["plantel"];
