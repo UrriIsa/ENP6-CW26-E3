@@ -35,7 +35,7 @@
                 if($query) {
                     $lista=mysqli_fetch_assoc($query);
                     echo "<h2>Consulta de " . $lista["id_form"] . "</h2>";
-                    echo "<h3>Respuestas del formulario</h3>";
+                    echo "<h3>Respuestas del formulario diagnóstico</h3>";
                     echo "<div class='fondo'>";
                         echo "<h4>DATOS PERSONALES</h4>";
                         echo "<div class='seccion'>";
@@ -47,7 +47,11 @@
                         echo "<h4>INFORMACIÓN ACADÉMICA</h4>";
                         echo "<div class='seccion'>";
                             echo "<div class='res'><p><span>Motivo de inscripción:</span>" . $lista['pa1'] . "</p></div>";
-                            echo "<div class='res'><p><span>Conocimientos previos:</span>" . $lista['pa2'] . "</p></div>";
+                            echo "<div class='res'><p><span>Conocimientos previos:</span>" . $lista['pa2_0'] . "</p></div>";
+                            if(isset($lista['pa2_1']))
+                            {
+                                echo "<div class='res'><p><span>Los cuales son:</span>" . $lista['pa2_1'] . "</p></div>";
+                            }
                             $pa3_1=$lista["pa3_1"];
                             $pa3_2=$lista["pa3_2"];
                             if(isset($pa3_1)||isset($pa3_2)) 
