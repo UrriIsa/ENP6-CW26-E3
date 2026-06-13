@@ -37,7 +37,7 @@
                 Por el momento todos llevan a esta página-->
             <a id="boton-nav" href="./docente.php">Regresar</a>
             <a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a>
-            <a id="boton-nav" href="./desactivar_usuarios.php">Administrar usuarios</a>
+            <a id="boton-nav" href="./admin_general_usuarios.php">Administrar usuarios</a>
         </nav>
         <main>
             <h2>Datos estadísticos</h2>
