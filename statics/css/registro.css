@@ -92,24 +92,6 @@ input{
     margin-left: 10px;
     height: 15px;
 }
-input[type="text"] {
-    width: 75%;
+.registro{
+    color: #2C42B7;
 }
-textarea {
-    width: 75%;
-    margin-left: 10px;
-}
-/*preguntas tipo radio*/
-.radio{
-    border-radius: 5px;
-    text-align: center;
-}
-label, p{
-    margin-top: 5px;
-    margin-left: 5px;
-    text-align: left;
-}
-label {
-    display: inline-block;
-}
-/*boton de enviar*/

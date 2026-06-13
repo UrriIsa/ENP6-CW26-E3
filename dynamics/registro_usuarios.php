@@ -13,15 +13,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../statics/css/registro_usuarios.css">
+    <link rel="stylesheet" href="../statics/css/registro.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <div class="head">
+            <div class="head-left">
+                <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
+                <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
+                <h1>Nombre del Proyecto</h1>
+            </div>
+            <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
+        </div>
+    </header>
     <div class="registro-container">
-        <h1>Registro de usuarios</h1>
+        <h2 class="registro">Registro de usuarios</h2>
         <form action="./registro.php" method="post">
+            <label for="username">Ingresa número de cuenta:</label>
             <input type="text" id="username" name="username" placeholder="Ej; 218949218" required><br><br>
+            <label for="username">Ingresa contraseña:</label>
             <input type="password" id="password" name="password" placeholder="contraseña" required><br><br>
+            <label for="username">Ingresa nombre completo:</label>
             <input type="text" id="name" name="name" placeholder="Nombre completo" required><br><br>
             <?php
                 echo "<div class='opcion'>";
