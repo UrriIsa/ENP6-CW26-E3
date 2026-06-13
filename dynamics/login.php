@@ -22,7 +22,7 @@
             $_SESSION['username'] = $registro["nocta"];
             $_SESSION["rol"] = "alumno";
             setcookie("activo", $registro["nocta"], time() + (86400*7)); // 1 dia = 86400 segundos, expirará en un dia
-            header("Location: alumno.php");
+            header("Location: ../templates/inicio-alumno.html");
         }
 
         else
