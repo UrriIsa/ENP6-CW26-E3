@@ -1,0 +1,113 @@
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center;
+    text-align: center; */
+}
+
+a {
+        text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    text-align: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logos {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 55px;
+}
+
+.modulo {
+    width: 85%;
+    height: 20vh;
+    background-color: #cbd9ff;
+    margin: 4%;
+    color: black;
+    text-align: center;
+
+    h2 {
+        color: black;
+        padding: 2%;
+    }
+
+    a {
+        position: relative;
+        bottom: 8rem;
+    }
+}
+
+.imgs-modulos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 0.35;
+    z-index: 0;
+}
+
+.card {
+    /* height: 0%; */
+    border: solid 1px;
+    border-color: black;
+    width: 80%;
+    height: 400px;
+    margin: 5%;
+    margin-top: 3%;
+    text-align: center;
+}
+
+#material-extra {
+    width: 40%;
+}
+/* color y tamaño de la barra superior en donde se muestran los logos */
+#barra-logos {
+    background-color: #0218a4;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#foto-usuario {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+}
+
+#modulos {
+    width: 50%;
+    position: relative;
+    margin-left: 5%;
+}
+
+#titulo {
+    padding: 1%;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-card {
+    padding: 5%;
+    position: relative;
+    bottom: 20rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 35pt;
+}
