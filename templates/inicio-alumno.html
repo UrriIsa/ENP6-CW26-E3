@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio alumno</title>
+    <link rel="stylesheet" href="../statics/css/inicio-alumno.css">
+</head>
+<body>
+    <header>
+        <!-- parte superior: muestra los logos de la UNAM, ENP6 y ETE y botón de usuario que redirige al perfil del alumno -->
+        <div id="barra-logos">
+            <img src= "../statics/imgs/logo-unam.png" class="logos" alt="logo UNAM">
+            <img src="../statics/imgs/logo-prepa6.png" class="logos" alt="logo prepa seis">
+            <img src="../statics/imgs/logo-ete.png" class="logos" alt="logo estudios técnicos especializados">
+            <a href="#"> <img src="../statics/imgs/foto-usuario.png" class="logos" alt="logo estudios técnicos especializados" id="foto-usuario"> </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- <div id="head"> -->
+        <h1> Bienvenid@ $nombre-alummo </h1> <hr>
+            <!-- <a> <img src="../statics/imgs/foto-usuario.png" alt="foto de perfil" id="foto-usuario"class="logos"> </a> -->
+        <!-- </div> <hr> -->
+
+        <div class="row">
+            <section class="card" id="formulario">
+                <div id="texto-form">
+                    <h2> ¡ IMPORTANTE ! </h2>
+                    <p> Contesta el siguiente cuestionario. Es relevante para llevar un seguimiento sobre cómo ayudarte: </p>
+                </div>
+                <a href="#" class="boton"> Click <span id="flecha"> ➨ </span> </a>
+            </section>
+
+            <section class="card" id="material-apoyo">
+                <a href="#">
+                    <img src="../statics/imgs/codigo-azul.png" alt="codigo" id="cover"> 
+                    <!-- <h2 id="texto-mat"> MATERIAL DE APOYO </h2> -->
+                </a>
+            </section>
+        </div>
+
+        <div class="row">
+            <section class="card" id="apoyo-psic">
+                <p id="texto-psic"> <b> ¿Requieres asesoriamento psicológico?</b> Consulta el apoyo que te brinda nuestra escuela. </p>
+                <a href="#" class="boton"> Click <span id="flecha"> ➨ </span> </a>
+            </section>
+            <div class="card" id="apoyo-psic">
+                <p id="texto-psic"> También puedes consultar las siguientes instancias: <br> <br>
+                    <b><a href="#" id="link-psic"> Link </a> </b><br><br>
+                    <b><a href="#" id="link-psic"> Link </a> </b><br> <br>
+                </p>
+            </div>
+        </div>
+        </main>
+</body>
+</html>
