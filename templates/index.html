@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../statics/css/inicio.css">
+
+    <title> Inicio </title>
+</head>
+
+<body>
+    <header>
+        <!-- parte superior: muestra los logos de la UNAM, ENP6 y ETE y botón ACCEDER que redirige al login -->
+        <div id="barra-logos">
+            <img src= "../statics/imgs/logo-unam.png" class="logos" alt="logo UNAM">
+            <img src="../statics/imgs/logo-prepa6.png" class="logos" alt="logo prepa seis">
+            <img src="../statics/imgs/logo-ete.png" class="logos" alt="logo estudios técnicos especializados">
+            <a href="#" id="acceder"> ACCEDER </a>
+        </div>
+
+        <!-- navbar (falta diseño responsivo): muestra las secciones dentro de esta página y redirige hacia ellas si se da click -->
+        <nav id="barra-texto">
+            <ul id = "nav-info">
+                <li>
+                    <a href="#info-ete"> ¿Qué son los ETE? </a>
+                </li>
+                <li>
+                    <a href="#acerca-de"> Acerca de </a>
+                </li>
+                <li>
+                    <a href="#como-acceder"> ¿Cómo acceder al sistema? </a>
+                </li>
+                <li>
+                    <!-- aquí no supe qué agregar lol, pero se puede meter cualquier cosa -->
+                    <a href= ""> Créditos/ Adicional </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="head">
+            <img src="../statics/imgs/auditorio.jpeg" id="auditorio">
+        </div>
+        <h1 class="titulos"> Sistema de apoyo a estudiantes del ETEC </h1>
+
+        <!-- primera sección de este html: da información sobre el registro y acceso al sistema. -->
+        <section class="secciones" id="como-acceder">
+            <div class="contenedor-izq">
+                <img src="../statics/imgs/totem.jpeg" alt="código del ete en computación" class="imagenes">
+            </div>
+            <div class="contenedor-der">
+                <h2 class="titulos"> ¿Cómo acceder al sistema? </h2>
+                <p class="info">
+                    <b> Si eres alumno: </b> tu profesor/a se encargará de realizar el registro correspondiente para permitirte el acceso al sistema. Únicamente deberás ingresar tu número de cuenta como usuario y "(número de cuenta)P6*" (sin comillas) como contraseña. <br> <br>
+                    <b> Si eres profesor: </b> no sé q poner aquí jej <br> <br>
+                    <a href="" > Acceder </a>
+                    <!-- falta link de redirección a login -->
+                </p>
+            </div>
+        </section>
+
+        <!-- segunda sección de este html: información general sobre qué es un ete + imagen  -->
+        <!-- <div class="secciones" id="info-ete"> -->
+        <section class="secciones" id="info-ete">
+            <div class="contenedor-der">
+                <img src="../statics/imgs/lacec.jpeg" alt="Computadora con código" class="imagenes">
+            </div>
+            <div class="contenedor-izq">
+                <h2 class="titulos"> ¿Qué son los ETE? </h2>
+                <p class="info"> Los <b>E</b>studios <b>T</b>écnicos <b>E</b>specializados (<b>ETE</b>) son programas impartidos en los nueve planteles de la Escuela Nacional Preparatoria que buscan brindar a sus alumnos conocimientos básicos en estudios superiores. Éstos tienen como propósitos generales: la inserción del estudiantado en el mundo laboral, el desarrollo de habilidades duras y blandas y el entendimiento de temas en diferentes áreas del conocimiento. <br> <br> <a href="https://www.ete.enp.unam.mx/"> Saber más </a> </p>
+            </div>
+        </section> 
+        <!-- </div> -->
+
+        <!-- tercera sección de este html: información específica sobre el sistema + imagen -->
+        <!-- <div class="secciones" id="acerca-de"> -->
+        <section class="secciones" id="acerca-de">
+            <div class="contenedor-der">
+                <h2 class="titulos"> Acerca de (nombre) </h2>
+                <p class="info"> <b> (Nombre) </b> es un sistema dirigido a alumnos y profesores del primer año del <b> ETE en computación</b>, tiene como objetivo principal reducir los índices de deserción en el estudiantado. Cuenta con materiales de utilidad para los alumnos, como planes y estrategias de estudio; así como con herramientas pensadas para dar seguimiento constante a su trayectoria académica y personal, facilitando así a los docentes la toma de decisiones y la creación de estrategias pedagógicas relacionadas con el estudio técnico. </p>
+            </div>
+            <div class="contenedor-izq">
+                <img src="../statics/imgs/computadora.jpg" alt="código del ete en computación" class="imagenes">
+            </div>
+        </section>
+        <!-- </div> -->
+
+        <!-- <div class="secciones" id="como-acceder"> -->
+    <!-- </div> -->
+    </main>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* FALTA DISEÑO RESPONSIVO */
+/* main {
+    display: grid;
+} */
+body {
+    margin: 0;
+}
+
+/* para subtitulos de cada sección */
+h2 {
+    color: #0218a4;
+}
+
+/* checar problema con el height (no toma la altura de los elementos que se encuentran dentro del section) */
+section {
+    /* height: auto; */
+    /* altura fija */
+    height: 500px;
+}  
+
+/* mantiene la navbar y los logos hasta arriba del documento aunque se haga scroll */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* estilado para texto plano de cada sección */
+.info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    padding: 10%;
+    padding-top: 3%;
+    text-align: left !important;
+    line-height: 1.5;
+}
+
+/* para definir tamaños de imágenes y fit cover */
+.imagenes {
+    width: 450px;
+    height: 350px;
+    object-fit: cover;
+    /* margin: 5%; */
+    margin-top: 7%;
+}
+
+.titulos {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3%;
+}
+
+/* contenedor fijo a la derecha del documento */
+.contenedor-der {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    margin-right: 3%;
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+}
+
+/* contenedor fijo a la izquierda del documento */
+.contenedor-izq {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    margin-left: 3%;
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+}
+
+.logos {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 55px;
+}
+
+/* color y tamaño de la barra superior en donde se muestran los logos */
+#barra-logos {
+    background-color: #0218a4;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#barra-texto {
+    background-color: #cbd9ff;
+    height: 50px;
+    /* display: flex; */
+}
+
+/* ajusta el tamaño y disposición de los elementos de la navbar para que se muestren en horizontal y con espacio entre si*/
+#nav-info {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+#barra-texto a{
+    color: #0218a4;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    /* padding-left: 66px; */
+}
+
+#acceder {
+    position: fixed;
+    right: 0;
+    text-align: center;
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 35px;
+    color: #0218a4;
+    background-color: white;
+    padding: 1%;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#head {
+    width: 100%;
+}
+
+#auditorio {
+    width: 100%;
+}
