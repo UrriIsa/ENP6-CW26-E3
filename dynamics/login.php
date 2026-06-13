@@ -66,7 +66,7 @@
             }
             else
             {
-                header("Location: login.html");
+                header("Location: ../templates/login.html");
             }
         }
     }
