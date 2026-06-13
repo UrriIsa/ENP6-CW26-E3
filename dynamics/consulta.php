@@ -30,6 +30,11 @@
                 <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
             </div>
         </header>
+        <nav>
+            <a id="boton-nav" href="./prof-estadisticas.php">Regresar</a>
+            <a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a>
+            <a id="boton-nav" href="./admin_general_usuarios.php">Administrar usuarios</a>
+        </nav>
         <main>
             <?php
                 if($query) {
