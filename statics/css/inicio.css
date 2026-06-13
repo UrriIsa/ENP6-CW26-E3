@@ -25,6 +25,37 @@ header {
     z-index: 1000;
 }
 
+.animacion {
+    width: 100%;
+    height: 70px;
+    border-top: 2px solid #0218a4;
+    border-bottom: 2px solid #0218a4;
+    overflow: hidden;
+    background-color: #cbd9ff;
+    margin-bottom: 30px;
+}
+
+.animacion li {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenido {
+    display: flex;
+    list-style: none;
+    animation: scrolling 10s linear infinite;
+}
+
+.ete {
+    flex-shrink: 0;
+}
+
+@keyframes scrolling {
+    0% {transform: translateX(0) }
+    100% {transform: translateX(-100%) }
+}
+
+
 /* estilado para texto plano de cada sección */
 .info {
     font-family: Arial, Helvetica, sans-serif;
