@@ -10,11 +10,12 @@ main {
 /*logos, nombre del sistema, foto de perfil*/
 .head{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #2C42B7;
     box-sizing: border-box;
     color: #FFFFFF;
-    padding: 22px;
+    padding: 3px;
 }
 /*logos y nombre del sistema*/
 .head-left{
@@ -40,13 +41,19 @@ nav {
 h2 {
     padding: 20px;
     color: #2C42B7;
+    text-align: center;
 }
 
 h3 {
     font-size: medium;
     padding: 10px;
+    text-align: center;
 }
-
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 /*Lista grupo/estudiantes */
 .fondo{
     display: flex;
