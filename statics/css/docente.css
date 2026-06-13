@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    justify-items: center;
+    align-items:center ;
+}
+/*logos, nombre del sistema, foto de perfil*/
+.head{
+    display: flex;
+    align-items: center;
+    background-color: #2C42B7;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    padding: 22px;
+}
+/*logos y nombre del sistema*/
+.head-left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/*mensajes de bienvenida y responder formulario*/
+legend, h2{
+    color: #2C42B7;
+}
+
+h2 {
+    padding: 20px;
+}
+
+h3 {
+    font-size: medium;
+    padding: 10px;
+}
+
+#botones {
+    display: flex;
+    flex-direction: row;
+}
+
+/*formulario*/
+form{
+    justify-items: center;
+    align-items:center ;
+    background-color: #F4F7FF;
+    border-radius: 10px;
+    padding: 10px;
+    width: 60%;
+}
+fieldset {
+    border: 1px solid #2C42B7;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+.pregunta, .checkbox, .radio{
+    background-color: #CAD8FE;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%;
+    font-size: 12pt;
+}
+input{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 15px;
+}
+input[type="text"] {
+    width: 75%;
+}
+textarea {
+    width: 75%;
+    margin-left: 10px;
+}
+/*preguntas tipo radio*/
+.radio{
+    border-radius: 5px;
+    text-align: center;
+}
+label, p{
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: left;
+}
+label {
+    display: inline-block;
+}
+/*boton de enviar*/

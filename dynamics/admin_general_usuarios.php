@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Regina Arantza González Hernández">
+    <meta name="description" content="Pagina de adición, desactivacion y modificación de usuarios para Orientacion educativa ETEC">
+    <link rel="stylesheet" href="../statics/css/registro_usuarios.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class ="admin-container">
+        <button class="admin-button" onclick="window.location.href='registro_usuarios.php'">Registrar nuevo usuario</button>
+        <button class="admin-button" onclick="window.location.href='desactivar_usuarios.php'">Desactivar usuario</button>
+        <button class="admin-button" onclick="window.location.href='modificar_usuarios.php'">Modificar usuario</button>
+    </div>
+</body>
