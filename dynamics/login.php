@@ -42,7 +42,7 @@
             }
             else
             {
-                header("Location: login.html");
+                header("Location: ../templates/login.html");
             }
         }
     }
@@ -58,11 +58,11 @@
 
             if ($_SESSION["rol"] == "docente")
             {
-                header("Location: ../templates/admin-usuarios/admin_general_usuarios.html");
+                header("Location: ./admin_general_usuarios.php");
             }
             elseif($_SESSION["rol"] == "alumno")
             {
-                header("Location: alumno.php");
+                header("Location: ./alumno.php");
             }
             else
             {
