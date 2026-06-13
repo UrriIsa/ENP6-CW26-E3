@@ -6,21 +6,36 @@
         require './conexion.php';
         $con = connect();
         //Incluímos conexion.php y designamos connect a $con
-        $username = trim($_POST["username"]);
-        $password = trim($_POST["password"]);
+        $username = ($_POST["username"]);
         //Quitamos espacios
-        
-        try
+        if(isset($_POST["activacion"]))
         {
-            $del_val = "UPDATE alumnos SET id_activo = 2 WHERE nocta = '$username' AND contraseña = '$password'";
-            mysqli_query($con, $del_val);
-            echo "Acción realizada correctamente";
-        } catch(mysqli_sql_exception $e)
-        {
-            echo "<h1>Esa acción no se puede realizar</h1>";
+            if($_POST["activacion"]=="desactivar")
+            {
+                try
+                {
+                    $del_val = "UPDATE alumnos SET id_activo = 2 WHERE nocta = '$username'";
+                    mysqli_query($con, $del_val);
+                    echo "Acción realizada correctamente";
+                } catch(mysqli_sql_exception $e)
+                {
+                    echo "<h1>Esa acción no se puede realizar</h1>";
+                }
+            } 
+            else 
+            {
+                try
+                {
+                    $act_val = "UPDATE alumnos SET id_activo = 1 WHERE nocta = '$username'";
+                    mysqli_query($con, $act_val);
+                    echo "Acción realizada correctamente";
+                } catch(mysqli_sql_exception $e)
+                {
+                    echo "<h1>Esa acción no se puede realizar</h1>";
+                }
+            }
         }
-    }
-
+    }    
     else
     {
         echo "No tienes permiso para acceder a esta página.";

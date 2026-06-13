@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class ="admin-container">
-        <button class="admin-button" onclick="window.location.href='registro_usuarios.html'">Registrar nuevo usuario</button>
-        <button class="admin-button" onclick="window.location.href='desactivar_usuarios.html'">Desactivar usuario</button>
-        <button class="admin-button" onclick="window.location.href='modificar_usuarios.html'">Modificar usuario</button>
+        <button class="admin-button" onclick="window.location.href='registro_usuarios.php'">Registrar nuevo usuario</button>
+        <button class="admin-button" onclick="window.location.href='desactivar_usuarios.php'">Desactivar usuario</button>
+        <button class="admin-button" onclick="window.location.href='modificar_usuarios.php'">Modificar usuario</button>
     </div>
 </body>
