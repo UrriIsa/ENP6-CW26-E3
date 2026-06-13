@@ -78,8 +78,8 @@ label{
 }
 
 .boton {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .boton div {

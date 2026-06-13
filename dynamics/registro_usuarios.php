@@ -27,47 +27,62 @@
             <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
         </div>
     </header>
-    <div class="registro-container">
+    <nav>
+            <a id="boton-nav" href="./admin_general_usuarios.php">Regresar</a>
+            <a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a>
+            <a id="boton-nav" href="./admin_general_usuarios.php">Administrar usuarios</a>
+    </nav>
+    <main>
         <h2 class="registro">Registro de usuarios</h2>
-        <form action="./registro.php" method="post">
-            <label for="username">Ingresa número de cuenta:</label>
-            <input type="text" id="username" name="username" placeholder="Ej; 218949218" required><br><br>
-            <label for="username">Ingresa contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="contraseña" required><br><br>
-            <label for="username">Ingresa nombre completo:</label>
-            <input type="text" id="name" name="name" placeholder="Nombre completo" required><br><br>
-            <?php
-                echo "<div class='opcion'>";
-                    echo "<label for='grupo'>Grupo</label>";
-                    echo "<select id='grupo' name='grupo' required>";
-                        echo "<option value=''>--Selecciona--</option>";
-                        while($grupo=mysqli_fetch_assoc($query))
-                        {
-                            echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['grupo'] . "</option>"; 
-                        }
-                    echo"</select></div>";
-                echo "<div class='opcion'>";
-                    echo "<label for='plantel'>Plantel</label>";
-                    echo "<select id='plantel' name='plantel' required>";
-                        echo "<option value=''>--Selecciona--</option>";
-                        while($plantel=mysqli_fetch_assoc($query2))
-                        {
-                            echo "<option value='" . $plantel['num_plantel'] . "'>" . $plantel['nombre_plantel'] . "</option>"; 
-                        }
-                    echo"</select></div>";
-                echo "<div class='opcion'>";
-                    echo "<label for='ete'>ETE</label>";
-                    echo "<select id='ete' name='ete' required>";
-                        echo "<option value=''>--Selecciona--</option>";
-                        while($ete=mysqli_fetch_assoc($query3))
-                        {
-                            echo "<option value='" . $ete['id_ete'] . "'>" . $ete['nombre_ete'] . "</option>";
-                        }
-                    echo"</select></div>";
+        <div class="form">
+            <form action="./registro.php" method="post">
+                <div class="input">
+                    <label for="username">Ingresa número de cuenta:</label><br>
+                    <input type="text" id="username" name="username" placeholder="Ej; 218949218" required><br>
+                </div>
+                <div class="input">
+                    <label for="password">Ingresa contraseña:</label><br>
+                    <input type="password" id="password" name="password" placeholder="contraseña" required><br>
+                </div>
+                <div class="input">
+                    <label for="name">Ingresa nombre completo:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Nombre completo" required><br>
+                </div>
+                <?php
+                    echo "<div class='input'>";
+                        echo "<label for='grupo'>Grupo</label><br>";
+                        echo "<select id='grupo' name='grupo' required>";
+                            echo "<option value=''>--Selecciona--</option>";
+                            while($grupo=mysqli_fetch_assoc($query))
+                            {
+                                echo "<option value='" . $grupo['id_grupo'] . "'>" . $grupo['grupo'] . "</option>"; 
+                            }
+                        echo"</select></div>";
+                    echo "<div class='input'>";
+                        echo "<label for='plantel'>Plantel</label><br>";
+                        echo "<select id='plantel' name='plantel' required>";
+                            echo "<option value=''>--Selecciona--</option>";
+                            while($plantel=mysqli_fetch_assoc($query2))
+                            {
+                                echo "<option value='" . $plantel['num_plantel'] . "'>" . $plantel['nombre_plantel'] . "</option>"; 
+                            }
+                        echo"</select></div>";
+                    echo "<div class='input'>";
+                        echo "<label for='ete'>ETE</label><br>";
+                        echo "<select id='ete' name='ete' required>";
+                            echo "<option value=''>--Selecciona--</option>";
+                            while($ete=mysqli_fetch_assoc($query3))
+                            {
+                                echo "<option value='" . $ete['id_ete'] . "'>" . $ete['nombre_ete'] . "</option>";
+                            }
+                        echo"</select></div>";
 
-            ?>
-            <button type="submit"> Registrar </button>
-        </form>
-    </div>
+                ?>
+                <div class="boton">
+                    <div><button type="submit" id="boton"> Registrar </button></div>
+                </div>    
+            </form>
+        </div>
+    </main>    
 </body>
 </html>

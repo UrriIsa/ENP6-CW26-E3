@@ -61,8 +61,7 @@ h2 {
 
 }
 label{
-    margin-top: 5px;
-    margin-left: 5px;
+    margin:5px;
     text-align: left;
     display: inline-block;
 }
@@ -72,17 +71,15 @@ label{
     color: #FFFFFF;
     border-radius: 5px;
     border: 0px;
-    padding: 4px;
-    font-size:larger;
-
-}
-
-.boton {
-    display: flex;
     justify-content: center;
+    font-size:large;
 }
 
-.boton div {
+.botones {
+  display: flex;
+}
+
+.botones div {
   margin: 5px;
   padding: 5px;
 }
