@@ -40,7 +40,7 @@
                     
                     <div class="botones">
                         <div class="boton-nav"><button><a id="boton-nav" href="./docente.php">Regresar</a></button></div>
-                        <div class="boton-nav"><button><a id="boton-nav" href="./prof-esatadisticas.php">Datos estadísticos</a></button></div>
+                        <div class="boton-nav"><button><a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a></button></div>
                         <div class="boton-nav"><button><a id="boton-nav" href="./admin_general_usuarios.php">Registro de usuarios</a></button></div>
                     </div>
                 </main>
