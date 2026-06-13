@@ -35,9 +35,9 @@
         <nav>
             <!--Eventualmente cada botón llevará al lugar correcto
                 Por el momento todos llevan a esta página-->
-            <a id="boton-nav" href="./prof-estadisticas.html">Notificaciones</a>
-            <a id="boton-nav" href="./prof-estadisticas.html">Datos estadísticos</a>
-            <a id="boton-nav" href="./prof-estadisticas.html">Registro de usuarios</a>
+            <a id="boton-nav" href="./docente.php">Regresar</a>
+            <a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a>
+            <a id="boton-nav" href="./desactivar_usuarios.php">Administrar usuarios</a>
         </nav>
         <main>
             <h2>Datos estadísticos</h2>
@@ -64,7 +64,7 @@
                                 Tal vez haya otra manera*/
                             echo "</form>";
                         echo "</div>";
-                        $sql="SELECT nocta, nombre FROM alumnos WHERE grupo=" . $grupos["id_grupo"];
+                        $sql="SELECT nocta, nombre, id_activo FROM alumnos WHERE id_activo=1 AND grupo=" . $grupos["id_grupo"];
                         $query=mysqli_query($conexion, $sql);
                         while($lista=mysqli_fetch_assoc($query)) 
                         {
