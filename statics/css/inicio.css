@@ -115,6 +115,7 @@ header {
     /* padding-left: 66px; */
 }
 
+/* diseño del botón de acceder */
 #acceder {
     position: fixed;
     right: 0;
@@ -137,3 +138,4 @@ header {
 #auditorio {
     width: 100%;
 }
+
