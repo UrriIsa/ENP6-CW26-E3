@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    justify-items: center;
+    align-items:center ;
+}
+/*logos, nombre del sistema, foto de perfil*/
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C42B7;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    padding: 3px;
+}
+/*logos y nombre del sistema*/
+.head-left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* Barra de navegación */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 11px;
+    background-color: #D9D9D9;
+}
+
+#boton-nav {
+    text-decoration: none;
+    color: #2C42B7;
+    font-size: large;
+    font-weight: bold;
+}
+
+h2 {
+    padding: 20px;
+    color: #2C42B7;
+    text-align: center;
+}
+
+.form{
+    justify-items: center;
+    align-items:center ;
+    background-color: #F4F7FF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.input{
+    background-color: #CAD8FE;
+    border-radius: 5px;
+    padding: 5px;
+    display:block;
+    margin-top: 10px;
+
+}
+label{
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: left;
+    display: inline-block;
+}
+
+#boton {
+    background-color: #2C42B7;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 0px;
+    padding: 4px;
+    font-size:larger;
+
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+
+.boton div {
+  margin: 5px;
+  padding: 5px;
+}
