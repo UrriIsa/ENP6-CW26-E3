@@ -39,12 +39,12 @@
             <?php
                 if($query) {
                     $lista=mysqli_fetch_assoc($query);
-                    echo "<h2>Consulta de " . $lista["id_form"] . "</h2>";
+                    echo "<h2>Consulta de " . $_POST["nombre"] . "</h2>";
                     echo "<h3>Respuestas del formulario diagnóstico</h3>";
                     echo "<div class='fondo'>";
                         echo "<h4>DATOS PERSONALES</h4>";
                         echo "<div class='seccion'>";
-                            echo "<div class='res'><p><span>Nombre:</span>" . $lista['id_form'] . "</p></div>";
+                            echo "<div class='res'><p><span>Nombre:</span>" . $_POST['nombre'] . "</p></div>";
                             echo "<div class='res'><p><span>Número de cuenta:</span>" . $lista['nocta'] . "</p></div>";
                             echo "<div class='res'><p><span>Grupo:</span>" . $lista['pa0'] . "</p></div>";
                             echo "<div class='res'><p><span>Turno:</span>" . $lista['turno'] . "</p></div>";
@@ -134,7 +134,7 @@
                                     echo "</ul></div>";    
                                 }
                             }
-                            echo "<div class='res'><p><span>Si no llegáse a funcionar el método:</span>" . $lista['pa7_1'] . "</p></div>";
+                            echo "<div class='res'><p><span>Si no llegáse a funcionar el método:</span>" . $lista['pa7_3'] . "</p></div>";
                         echo "</div>";
                     echo "</div>";
                 }
