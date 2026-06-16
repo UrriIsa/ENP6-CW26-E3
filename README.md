@@ -4,7 +4,15 @@
 - **Fecha de inicio:** 
 
 
-### FALTA miembros de equipo
+- **Miembros de equipo**:
+    - Mentor: 
+        - Urrutia Alfaro Isaac Arturo
+    - Integrantes: 
+        - Cortés Castillo Luisa Helena
+        - González Hernández Regina Arantza
+        - Milla Martínez Gerardo
+        - Mora Santillán Erik Patricio
+        - Zapata González Abigail
 
 #### 2. RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 - **Resumen:** 
