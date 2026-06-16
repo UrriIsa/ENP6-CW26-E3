@@ -71,6 +71,7 @@
                                 echo "<p>" . $lista['nombre'] . "</p>";
                                 echo "<form action='consulta.php' method='POST'> <!--Lo mismo de arriba-->";
                                     echo "<input type='hidden' name='estudiante' value=" . $lista['nocta'] . ">";
+                                    echo "<input type='hidden' name='nombre' value='" . $lista['nombre'] . "'>";
                                     echo "<button type='submit' id='boton-estadistica-azul'><img id='img-boton-estadistica' src='../statics/imgs/estadistica-azul.svg'></button>";
                                 echo "</form>";
                             echo "</div>";
