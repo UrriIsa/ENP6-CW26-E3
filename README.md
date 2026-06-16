@@ -3,6 +3,9 @@
 - **Título del proyecto:** Apoyo  al alumnado de los Estudios Técnicos Especializados Computación
 - **Fecha de inicio:** 
 
+
+### FALTA miembros de equipo
+
 #### 2. RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 - **Resumen:** 
 Sistema web responsivo y de acceso restringido para apoyar a los alumnos de quinto grado que cursan el el Estudio Técnico en Computación en el Plantel 6 “Antonio Caso”, además de sus docentes. Este recaba información del alumnado mediante cuestionarios y perfiles personales, permitiendo detectar factores de riesgo de deserción.
@@ -30,9 +33,11 @@ Estudiantes de quinto grado que cursan el el Estudio Técnico en Computación en
     - Apartado de información relacionada : 
         - Instancias de apoyo psicológico
         - Material de consulta de métodos de estudio
-    - Visualización de situaciones académicas específicas de cada alumnos y estadísticas grupales.
-    - Ordenamiento de situaciones mediante ponderación para identificar a lxs alumnxs con mayor riesgo a desertar.
-    - Formulario
+    - Visualización de situaciones académicas específicas de cada alumnos.
+    - Manipulación de información de los alumnos
+        - Activar o reactivar alumno
+        - Modificar datos de alumnos
+        - Dar de alta alumnos
 - **Fuera de alcance:**
     - Rol de administrador
     - Crear actividades y anuncios
