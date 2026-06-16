@@ -1,12 +1,21 @@
+body {
+    padding: 0.5%;
+    width: 98%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .login-container {
-    width: 350px;
+    margin: 0;
+    text-align: center;
+    width: 50%;
+    height: 100%;
     background: white;
-    border: 2px solid #000; 
-    border-radius: 20px;  
-    padding: 30px;
+    /* border: 2px solid #000;  */
+    /* border-radius: 20px;   */
+    /* padding: 30px; */
     position: absolute;
-    top: 30%;
-    left: 35%;
+    top: 0;
+    right: 0%;
 }
 
 button {
@@ -24,3 +33,32 @@ button:hover {
     background-color: #3399b3; 
 }
 
+.campo {
+    margin: 10px;
+    width: 30%;
+    height: 30px;
+}
+
+#jacarandas-prepa {
+    width: 50%;
+    height: 95vh;
+    object-fit: cover;
+}
+
+#head {
+    font-size: 30pt;
+    position: relative;
+    top: 15%;
+}
+
+#bienvenido {
+    font-size: 20pt;
+    color: #3399b3;
+    position: relative;
+    top: 19%
+}
+
+#form-login {
+    position: relative;
+    top: 23%;
+}
