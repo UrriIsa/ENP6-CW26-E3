@@ -56,7 +56,7 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (234567891,'pompompurin','2468',1,NULL,5,2),(324569876,'Jaimito VII','910',2,5,10,1),(325273994,'Jaimito VI','JaimitoProf',1,NULL,NULL,1),(345678912,'chikawa','6789',2,7,9,1),(456789123,'Keroppi','6789',1,NULL,NULL,1);
+INSERT INTO `alumnos` VALUES (234567891,'pompompurin','2468',1,NULL,5,2),(324569876,'Jaimito VII','910',2,5,10,1),(325273994,'Jaimito VI','JaimitoProf',1,NULL,NULL,1),(326897645,'Jaimito VIII','8',1,9,8,1),(345678912,'chikawa','6789',2,7,9,1),(456789123,'Keroppi','6789',1,NULL,NULL,1);
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ DROP TABLE IF EXISTS `formulario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `formulario` (
-  `id_form` varchar(500) NOT NULL,
+  `id_form` int(11) NOT NULL AUTO_INCREMENT,
   `turno` varchar(10) DEFAULT NULL,
   `pa1` varchar(500) DEFAULT NULL,
   `pa2_0` varchar(500) DEFAULT NULL,
@@ -137,11 +137,11 @@ CREATE TABLE `formulario` (
   `pa7_3` varchar(500) DEFAULT NULL,
   `pa7_4` varchar(500) DEFAULT NULL,
   `pa0` varchar(500) DEFAULT NULL,
-  `nocta` int(9) DEFAULT NULL,
+  `nocta` int(9) NOT NULL,
   PRIMARY KEY (`id_form`),
   KEY `nocta` (`nocta`),
   CONSTRAINT `formulario_ibfk_1` FOREIGN KEY (`nocta`) REFERENCES `alumnos` (`nocta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +150,7 @@ CREATE TABLE `formulario` (
 
 LOCK TABLES `formulario` WRITE;
 /*!40000 ALTER TABLE `formulario` DISABLE KEYS */;
-INSERT INTO `formulario` VALUES ('chikawa','Matutino','Conocer gente','Sí','programar','Sí','1, 2, 3, 4','Cuidar a mi abuela','1','Sí','Sí','No','hola','3, 4, 5','esforzarme mas','hola','6',345678912);
+INSERT INTO `formulario` VALUES (1,'Vespertino','a','Sí','a','Sí','1, 2','','1','Sí','Sí','2','','1, 2','a','','789',326897645),(2,'Vespertino','4','Sí','ddd','Sí','1, 2','','1','Sí','No','1','aaaaa',NULL,'ni modo','','4684',456789123);
 /*!40000 ALTER TABLE `formulario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -238,4 +238,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-12 15:33:27
+-- Dump completed on 2026-06-16 11:38:07
