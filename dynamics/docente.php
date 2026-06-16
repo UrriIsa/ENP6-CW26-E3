@@ -1,7 +1,7 @@
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     session_start();
-    if(isset($_COOKIE['activo']) && $_SESSION['rol'] == 'docente')
+    if(isset($_COOKIE['activo']) && $_SESSION["rol"] == "docente")
     {
         require './conexion.php';
         $con = connect();
@@ -36,12 +36,30 @@
                 <main>
                     
                     <h2>¡Te damos la bienvenida !</h2>
-                    <h3>Aquí puedes consultar tus notificaciones, los datos estadísticos y admiinistrar usuarios</h3>
-                    
+                    <h3>Aquí puedes consultar tus notificaciones, los datos estadísticos y administrar usuarios</h3>
+                    <div class="datos-prof">
+                        <?php
+                            $sql_1 = "SELECT ete FROM docentes WHERE notra = '" . $username . "'";
+                            $result_1 = mysqli_query($con, $sql_1);
+                            $no_ete = mysqli_fetch_assoc($result_1);
+                            $sql_ete = "SELECT nombre_ete FROM etes WHERE id_ete = " . intval($no_ete['ete']);
+                            $sql_grupo = "SELECT grupo FROM grupos WHERE docente = '" . $username . "'";
+                            $result_data = mysqli_query($con, $sql_ete);
+                            $result_data2 = mysqli_query($con, $sql_grupo);
+                            $datos_ete = mysqli_fetch_assoc($result_data);
+                            $datos_grupo = mysqli_fetch_assoc($result_data2);
+                            echo "<p id='datos'><strong>ETE:</strong> " . $datos_ete['nombre_ete'] . "<br><strong>Grupo:</strong> " . $datos_grupo['grupo'] . "</p>";
+                        ?>
+                    </div>
                     <div class="botones">
-                        <div class="boton-nav"><button><a id="boton-nav" href="./docente.php">Regresar</a></button></div>
-                        <div class="boton-nav"><button><a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a></button></div>
-                        <div class="boton-nav"><button><a id="boton-nav" href="./admin_general_usuarios.php">Registro de usuarios</a></button></div>
+                        <div class="boton-izq">
+                            <a id="boton-nav" class="boton-link" href="./prof-estadisticas.php"><strong>Datos<br>estadísticos<img src="../statics/imgs/statistics.png" alt="logo-estadística" class="logo-estadística" width="70px" height="70px"></strong></a>
+                        </div>
+                        <div class="botones-der">
+                            <a class="boton-link boton-nav-usuario" href="./registro_usuarios.php"><strong>Registrar usuarios</strong></a>
+                            <a class="boton-link boton-nav-usuario" href="./modificar_usuarios.php"><strong>Modificar usuarios</strong></a>
+                            <a class="boton-link boton-nav-usuario" href="./desactivar_usuarios.php"><strong>Desactivar usuarios</strong></a>
+                        </div>
                     </div>
                 </main>
             </body>

@@ -30,7 +30,7 @@
         </div>
     </header>
     <nav>
-            <a id="boton-nav" href="./admin_general_usuarios.php">Regresar</a>
+            <a id="boton-nav" href="./docente.php">Regresar</a>
             <a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a>
             <a id="boton-nav" href="./admin_general_usuarios.php">Administrar usuarios</a>
     </nav>
