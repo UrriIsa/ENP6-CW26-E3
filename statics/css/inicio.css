@@ -4,6 +4,8 @@
 } */
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* para subtitulos de cada sección */
@@ -13,9 +15,9 @@ h2 {
 
 /* checar problema con el height (no toma la altura de los elementos que se encuentran dentro del section) */
 section {
-    /* height: auto; */
-    /* altura fija */
+    display: flex;
     height: 500px;
+    flex-direction: row;
 }  
 
 /* mantiene la navbar y los logos hasta arriba del documento aunque se haga scroll */
@@ -23,6 +25,12 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+/* define la animación 'scrolling' para que los elementos se desplacen de su posición hasta ocultarse por el lado izquierdo*/
+@keyframes scrolling {
+    0% {transform: translateX(0) }
+    100% {transform: translateX(-100%) }
 }
 
 /* style de efecto marquee */
@@ -40,12 +48,6 @@ header {
 .animacion li {
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-/* define la animación 'scrolling' para que los elementos se desplacen de su posición hasta ocultarse por el lado izquierdo*/
-@keyframes scrolling {
-    0% {transform: translateX(0) }
-    100% {transform: translateX(-100%) }
 }
 
 /* define duración, velocidad constante (linear) y repitición en bucle (infinite) de animación*/
@@ -89,7 +91,7 @@ header {
 .contenedor-der {
     width: 50%;
     height: 100%;
-    position: absolute;
+    position: relative;
     right: 0;
     text-align: center;
     margin-right: 3%;
@@ -102,7 +104,7 @@ header {
 .contenedor-izq {
     width: 50%;
     height: 100%;
-    position: absolute;
+    position: relative;
     left: 0;
     text-align: center;
     margin-left: 3%;
@@ -129,12 +131,12 @@ header {
 #barra-texto {
     background-color: #cbd9ff;
     height: 50px;
-    /* display: flex; */
+    display: flex;
 }
 
 /* ajusta el tamaño y disposición de los elementos de la navbar para que se muestren en horizontal y con espacio entre si*/
 #nav-info {
-    margin: 0;
+    margin-top: 0;
     width: 100%;
     height: 100%;
     list-style: none;
