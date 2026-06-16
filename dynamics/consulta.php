@@ -30,6 +30,11 @@
                 <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
             </div>
         </header>
+        <nav>
+            <!--Eventualmente cada botón llevará al lugar correcto
+                Por el momento todos llevan a esta página-->
+            <a id="boton-nav" href="./prof-estadisticas.php">Regresar</a>
+        </nav>
         <main>
             <?php
                 if($query) {
