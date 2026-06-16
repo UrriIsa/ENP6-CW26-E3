@@ -38,6 +38,11 @@
         </nav>
         <main>
         <?php
+            if(!ctype_digit($username))
+            {
+                echo "No puedes introducir letras en un número de cuenta";
+                header("Location: ./registro.php");
+            }
             try {
                 $ins_val = "INSERT INTO alumnos(nocta, nombre, contraseña, grupo, plantel, ete, id_activo) VALUES ('$username', '$name', '$password', '$grupo', '$plantel', '$ete',  1)";
                 $result = mysqli_query($con, $ins_val);
@@ -46,12 +51,12 @@
             {
                 echo "<h2>Esa acción no se puede realizar</h2>";
             }
-        }
-        else
-        {
-            echo "<h1>No tienes permiso para acceder a esta página.</h1>";
-        }
-        ?>
-        </main>    
-        </body>
-        </html>
+    }
+    else
+    {
+        echo "<h1>No tienes permiso para acceder a esta página.</h1>";
+    }
+    ?>
+    </main>    
+    </body>
+    </html>
