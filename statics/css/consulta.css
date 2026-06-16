@@ -25,7 +25,7 @@ main {
 /* Barra de navegación */
 nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:left;
     padding: 11px;
     background-color: #D9D9D9;
 }
