@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../statics/css/desactivar.css">
-    <title>Document</title>
+    <title>Desactivar o activar usuarios</title>
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
             <div class="head-left">
                 <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
                 <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
-                <h1>Nombre del Proyecto</h1>
+                <h1>MetETE a estudiar</h1>
             </div>
             <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
         </div>

@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Regina Arantza González Hernández">
-        <meta name="description" content="Perfil de usuario - Orientación educativa ETEC">
+        <meta name="description" content="Perfil de usuario - MetETE a estudiar">
         <link rel="stylesheet" href="../statics/css/perfil.css">
 
         <title>Perfil</title>
