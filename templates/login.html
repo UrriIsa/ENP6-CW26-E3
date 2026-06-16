@@ -9,11 +9,17 @@
     <title> OE ETEC</title>
 </head>
 <body>
+    <div id="foto">
+        <img src="../statics/imgs/jacarandas-prepa.jpg" alt="edificio de la prepa con jacarandas" id="jacarandas-prepa">
+    </div>
     <div class="login-container">
-        <h1>Login OE ETEC</h1>
-        <form action="../dynamics/login.php" method="post">
-            <input type="text" id="username" name="username" placeholder="Ej; 218949218" required><br><br>
-            <input type="password" id="password" name="password" placeholder="contraseña" required><br><br>
+        <h1 id="head">Login OE ETEC</h1>
+        <h2 id="bienvenido"> Bienvenid@ </h2>
+        <form action="/dynamics/login.php" method="post" id="form-login">
+            <label for="username"> No. de cuenta </label><br>
+            <input type="text" id="username" name="username" placeholder="Ej; 218949218" required class="campo"><br><br>
+            <label for="password"> Contraseña </label><br>
+            <input type="password" id="password" name="password" placeholder="contraseña" required class="campo"><br><br>
             <button type="submit"> Login </button>
         </form>
     </div>
