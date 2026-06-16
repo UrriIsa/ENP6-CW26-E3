@@ -1,7 +1,7 @@
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     session_start();
-    if(isset($_COOKIE['activo']) && $_SESSION['rol'] == 'docente')
+    if(isset($_COOKIE['activo']) && $_SESSION["rol"] == "docente")
     {
         require './conexion.php';
         $con = connect();
@@ -37,11 +37,15 @@
                     
                     <h2>¡Te damos la bienvenida !</h2>
                     <h3>Aquí puedes consultar tus notificaciones, los datos estadísticos y admiinistrar usuarios</h3>
-                    
                     <div class="botones">
-                        <div class="boton-nav"><button><a id="boton-nav" href="./docente.php">Regresar</a></button></div>
-                        <div class="boton-nav"><button><a id="boton-nav" href="./prof-esatadisticas.php">Datos estadísticos</a></button></div>
-                        <div class="boton-nav"><button><a id="boton-nav" href="./admin_general_usuarios.php">Registro de usuarios</a></button></div>
+                        <div class="boton-izq">
+                            <a id="boton-nav" class="boton-link" href="./prof-estadisticas.php">Datos estadísticos</a>
+                        </div>
+                        <div class="botones-der">
+                            <a class="boton-link boton-nav-usuario" href="./registro_usuarios.php">Registrar usuarios</a>
+                            <a class="boton-link boton-nav-usuario" href="./modificar_usuarios.php">Modificar usuarios</a>
+                            <a class="boton-link boton-nav-usuario" href="./desactivar_usuarios.php">Desactivar usuarios</a>
+                        </div>
                     </div>
                 </main>
             </body>
