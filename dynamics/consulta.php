@@ -31,9 +31,9 @@
             </div>
         </header>
         <nav>
+            <!--Eventualmente cada botón llevará al lugar correcto
+                Por el momento todos llevan a esta página-->
             <a id="boton-nav" href="./prof-estadisticas.php">Regresar</a>
-            <a id="boton-nav" href="./prof-estadisticas.php">Datos estadísticos</a>
-            <a id="boton-nav" href="./admin_general_usuarios.php">Administrar usuarios</a>
         </nav>
         <main>
             <?php
