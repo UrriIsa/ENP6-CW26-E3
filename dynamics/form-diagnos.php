@@ -1,140 +1,176 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../statics/css/form-diagnos.css">
-        <title>Formulario Diagnóstico - MetETE a estudiar</title>
-    </head>
-    <body>
-        <header>
-            <!--agregue un div y un class-->
-            <div class="head">
-                <!--logo de la enp6 y unam y titulo del sitio-->
-                <div class="head-left">
-                    <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
-                    <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
-                    <h1>MetETE a estudiar</h1>
-                </div>
-                <!--Foto de perfil-->
-                <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
-            </div>
-        </header>
-        <main>
-            <h2>¡Te damos la bienvenida!</h2>
-            <h3>Responde este cuestionario para empezar.</h3>
-            <form action="../dynamics/veri.php" method="POST">
-                <fieldset>
-                    <!--a los divs de las preguntas les agrague un class="pregunta", para el css XD-->
-                    <!--Datos Personales-->
-                    <legend><strong>DATOS PERSONALES</strong></legend>
-                    <div class="pregunta">
-                        <label for="nombre">Nombre:</label><br>
-                        <input type="text" id="nombre" name="id_form" required>
+<?php
+    session_start();
+    if(isset($_COOKIE['activo']) && $_SESSION["rol"] == "alumno")
+    {
+        $nocta=$_SESSION['username'];
+?>
+        <!DOCTYPE html>
+        <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../statics/css/form-diagnos.css">
+                <title>Formulario Diagnóstico - MetETE a estudiar</title>
+            </head>
+            <body>
+                <header>
+                    <!--agregue un div y un class-->
+                    <div class="head">
+                        <!--logo de la enp6 y unam y titulo del sitio-->
+                        <div class="head-left">
+                            <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
+                            <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
+                            <h1>MetETE a estudiar</h1>
+                        </div>
+                        <!--Foto de perfil-->
+                        <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
                     </div>
-                    <div class="pregunta">
-                        <label>Grupo curricular:</label><br>
-                        <input type="text" id="grupo" name="pa0" required>
+                </header>
+                <main>
+                    <h2>¡Te damos la bienvenida!</h2>
+                    <h3>Responde este cuestionario para empezar.</h3>
+                    <form action="../dynamics/veri.php" method="POST">
+                        <fieldset>
+                            <!--a los divs de las preguntas les agrague un class="pregunta", para el css XD-->
+                            <!--Datos Personales-->
+                            <legend><strong>DATOS PERSONALES</strong></legend>
+                            <div class="pregunta">
+                                <label>Grupo curricular:</label><br>
+                                <input type="text" id="grupo" name="pa0" required>
+                            </div>
+                            <?php                            
+                                echo "<input type='hidden' id='nocta' name='nocta' value='" . $nocta . "'>";
+                            ?>                            
+                            <div class="radio">
+                                <p>Turno:</p>
+                                <label><input type="radio" id="matutino" name="turno" value="Matutino" required>Matutino</label>
+                                <label><input type="radio" id="vespertino" name="turno" value="Vespertino" required>Vespertino</label>
+                            </div>    
+                        </fieldset>
+                        <fieldset>
+                            <!--PREGUNTAS ACADÉMICAS-->
+                            <legend><strong>PREGUNTAS ACADÉMICAS</strong></legend>
+                            <div class="pregunta">
+                                <label for="pa1">¿Cuál fue tu motivo para elegir el Estudio Técnico Especializado en Computación?</label><br>
+                                <textarea id="motivo" name="pa1" required></textarea>
+                            </div>
+                            <div class="radio">       
+                                <p>¿Tienes conocimientos previos sobre computación o programación?</p>
+                                <label><input type="radio" id="conoc-si" name="pa2_0" value="Sí" required>Si</label>
+                                <label><input type="radio" id="conoc-no" name="pa2_0" value="No" required>No</label>
+                            </div>    
+                            <div class="pregunta">
+                                <label>En el caso de que si tengas, mencionalos :</label><br>
+                                <textarea id="conoc" name="pa2_1"></textarea>
+                            </div>
+                            <div class="radio">
+                                <p>¿Tienes actividades extra además del Estudio Técnico y la prepa?</p>
+                                <label><input type="radio" id="act-extra-si" name="pa3_0" value="Sí" required>Si</label>
+                                <label><input type="radio" id="act-extra-no" name="pa3_0" value="No" required>No</label>
+                            </div>    
+                            <div class="checkbox">
+                                <p>¿Cuáles?</p>
+                                <input type="checkbox" id="actividades-extra-1" name="pa3_1[]" value="1">
+                                <label for="actividades-extra-1">Actividades extracurriculares de la ENP</label><br>
+                                <input type="checkbox" id="actividades-extra-2" name="pa3_1[]" value="2">
+                                <label for="actividades-extra-2">Trabajo</label><br>
+                                <input type="checkbox" id="actividades-extra-3" name="pa3_1[]" value="3">
+                                <label for="actividades-extra-3">Asignaturas en contraturno</label><br>
+                                <input type="checkbox" id="actividades-extra-4" name="pa3_1[]" value="4">
+                                <label for="actividades-extra-4">Otro Estudio Técnico</label><br>
+                                <label for="actividades-extra-5">Otra(s):</label>
+                                <input type="text" id="actividades-extra-5" name="pa3_2"> 
+                            </div>
+                            <div class="radio">
+                                <p>De acuerdo a cómo son tus horarios, ¿podrás asistir de manera regular a las clases del ETE? (recuerda que son 2 horas diarias)</p>
+                                <input type="radio" id="horas-1" name="pa4" value="1" required>
+                                <label for="horas-1">Sí, podré assitir a las 10 horas semanales</label><br>
+                                <input type="radio" id="horas-2" name="pa4" value="2" required>
+                                <label for="horas-2">No, tendré que faltar 1-2 horas a la semana</label><br>
+                                <input type="radio" id="horas-3" name="pa4" value="3" required>
+                                <label for="horas-3">No, tendré que faltar 3-4 horas a la semana</label><br>
+                                <input type="radio" id="horas-4" name="pa4" value="4" required>
+                                <label for="horas-4">No, tendré que faltar más de 4 horas a la semana</label>
+                            </div> 
+                            <div class="radio">
+                                <p>¿Considerarías que tu grupo curricular es un grupo demandante?</p>
+                                <input type="radio" id="grupo-demandante-1" name="pa5" value="Sí" required>
+                                <label for="grupo-demandante-1">Sí</label>
+                                <input type="radio" id="grupo-demandante-2" name="pa5" value="No" required>
+                                <label for="grupo-demandante-2">No</label>
+                            </div>
+                            <div class="radio">
+                                <p>¿Eres alumno regular?</p>
+                                <label><input type="radio" id="reg-si" name="pa6" value="Sí" required>Si</label>
+                                <label><input type="radio" id="reg-no" name="pa6" value="No" required>No</label>
+                            </div>
+                            <div class="radio">
+                                <p>¿Conoces algún método de estudio?</p>
+                                <label><input type="radio" id="metodo-si" name="pa7_0" value="1" required>Si</label>
+                                <label><input type="radio" id="metodo-no" name="pa7_0" value="2" required>No</label>
+                            </div>    
+                            <div class="pregunta">
+                                <label>En caso de que si, menciona los que utilizas:</label><br>
+                                <textarea id="que-metodo" name="pa7_1"></textarea>
+                            </div>
+                            <div class="checkbox">
+                                <p>En que caso de que no, selecciona que haces para estudiar:</p>
+                                <input type="checkbox" id="metodo-1" name="pa7_2[]" value="1">
+                                <label for="metodo-1">Leer</label><br>
+                                <input type="checkbox" id="metodo-2" name="pa7_2[]" value="2">
+                                <label for="metodo-2">Memorizar</label><br>
+                                <input type="checkbox" id="metodo-3" name="pa7_2[]" value="3">
+                                <label for="metodo-3">Hacer ejercicios sobre el tema</label><br>
+                                <input type="checkbox" id="metodo-4" name="pa7_2[]" value="4">
+                                <label for="metodo-4">Material de apoyo</label><br>
+                                <input type="checkbox" id="metodo-5" name="pa7_2[]" value="5">
+                                <label for="metodo-5">Cursos</label><br>
+                                <label for="metodo-6">Otro(s):</label>
+                                <input type="text" id="metodo-6" name="pa7_4">  
+                            </div>
+                            <div class="pregunta">
+                                <label>Si tú método no llegase a funcionar, ¿qué haces cuando no comprendes un tema?</label><br>
+                                <textarea id="accion" name="pa7_3" rows="2"></textarea>   
+                            </div> 
+                        </fieldset>
+                        <!--boton de enviar-->
+                        <button type="submit" id="boton">Enviar</button>
+                    </form>
+                </main>
+            </body>
+        </html>
+<?php
+    } else
+    {
+?>        
+        <!DOCTYPE html>
+        <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../statics/css/form-diagnos.css">
+                <title>Formulario Diagnóstico - MetETE a estudiar</title>
+            </head>
+            <body>
+                <header>
+                    <!--agregue un div y un class-->
+                    <div class="head">
+                        <!--logo de la enp6 y unam y titulo del sitio-->
+                        <div class="head-left">
+                            <img src="../statics/imgs/logo-unam.png" alt="logo-unam" class="logo-unam" width="10%" height="10%">
+                            <img src="../statics/imgs/logo-enp6.png" alt="logo-enp6" class="logo-enp6" width="5%" height="5%">
+                            <h1>MetETE a estudiar</h1>
+                        </div>
+                        <!--Foto de perfil-->
+                        <img src="../statics/imgs/perfil.png" alt="foto-perfil" class="perfil" width="10%" height="10%">
                     </div>
-                    <div class="pregunta">
-                        <label>Número de cuenta:</label><br>
-                        <input type="text" id="nocta" name="nocta">
-                    </div>
-                    <div class="radio">
-                        <p>Turno:</p>
-                        <label><input type="radio" id="matutino" name="turno" value="Matutino" required>Matutino</label>
-                        <label><input type="radio" id="vespertino" name="turno" value="Vespertino" required>Vespertino</label>
-                    </div>    
-                </fieldset>
-                <fieldset>
-                    <!--PREGUNTAS ACADÉMICAS-->
-                    <legend><strong>PREGUNTAS ACADÉMICAS</strong></legend>
-                    <div class="pregunta">
-                        <label for="pa1">¿Cuál fue tu motivo para elegir el Estudio Técnico Especializado en Computación?</label><br>
-                        <textarea id="motivo" name="pa1" required></textarea>
-                    </div>
-                    <div class="radio">       
-                        <p>¿Tienes conocimientos previos sobre computación o programación?</p>
-                        <label><input type="radio" id="conoc-si" name="pa2_0" value="Sí" required>Si</label>
-                        <label><input type="radio" id="conoc-no" name="pa2_0" value="No" required>No</label>
-                    </div>    
-                    <div class="pregunta">
-                        <label>En el caso de que si tengas, mencionalos :</label><br>
-                        <textarea id="conoc" name="pa2_1"></textarea>
-                    </div>
-                    <div class="radio">
-                        <p>¿Tienes actividades extra además del Estudio Técnico y la prepa?</p>
-                        <label><input type="radio" id="act-extra-si" name="pa3_0" value="Sí" required>Si</label>
-                        <label><input type="radio" id="act-extra-no" name="pa3_0" value="No" required>No</label>
-                    </div>    
-                    <div class="checkbox">
-                        <p>¿Cuáles?</p>
-                        <input type="checkbox" id="actividades-extra-1" name="pa3_1[]" value="1">
-                        <label for="actividades-extra-1">Actividades extracurriculares de la ENP</label><br>
-                        <input type="checkbox" id="actividades-extra-2" name="pa3_1[]" value="2">
-                        <label for="actividades-extra-2">Trabajo</label><br>
-                        <input type="checkbox" id="actividades-extra-3" name="pa3_1[]" value="3">
-                        <label for="actividades-extra-3">Asignaturas en contraturno</label><br>
-                        <input type="checkbox" id="actividades-extra-4" name="pa3_1[]" value="4">
-                        <label for="actividades-extra-4">Otro Estudio Técnico</label><br>
-                        <label for="actividades-extra-5">Otra(s):</label>
-                        <input type="text" id="actividades-extra-5" name="pa3_2"> 
-                    </div>
-                    <div class="radio">
-                        <p>De acuerdo a cómo son tus horarios, ¿podrás asistir de manera regular a las clases del ETE? (recuerda que son 2 horas diarias)</p>
-                        <input type="radio" id="horas-1" name="pa4" value="1" required>
-                        <label for="horas-1">Sí, podré assitir a las 10 horas semanales</label><br>
-                        <input type="radio" id="horas-2" name="pa4" value="2" required>
-                        <label for="horas-2">No, tendré que faltar 1-2 horas a la semana</label><br>
-                        <input type="radio" id="horas-3" name="pa4" value="3" required>
-                        <label for="horas-3">No, tendré que faltar 3-4 horas a la semana</label><br>
-                        <input type="radio" id="horas-4" name="pa4" value="4" required>
-                        <label for="horas-4">No, tendré que faltar más de 4 horas a la semana</label>
-                    </div> 
-                    <div class="radio">
-                        <p>¿Considerarías que tu grupo curricular es un grupo demandante?</p>
-                        <input type="radio" id="grupo-demandante-1" name="pa5" value="Sí" required>
-                        <label for="grupo-demandante-1">Sí</label>
-                        <input type="radio" id="grupo-demandante-2" name="pa5" value="No" required>
-                        <label for="grupo-demandante-2">No</label>
-                    </div>
-                    <div class="radio">
-                        <p>¿Eres alumno regular?</p>
-                        <label><input type="radio" id="reg-si" name="pa6" value="Sí" required>Si</label>
-                        <label><input type="radio" id="reg-no" name="pa6" value="No" required>No</label>
-                    </div>
-                    <div class="radio">
-                        <p>¿Conoces algún método de estudio?</p>
-                        <label><input type="radio" id="metodo-si" name="pa7_0" value="1" required>Si</label>
-                        <label><input type="radio" id="metodo-no" name="pa7_0" value="2" required>No</label>
-                    </div>    
-                    <div class="pregunta">
-                        <label>En caso de que si, menciona los que utilizas:</label><br>
-                        <textarea id="que-metodo" name="pa7_1"></textarea>
-                    </div>
-                    <div class="checkbox">
-                        <p>En que caso de que no, selecciona que haces para estudiar:</p>
-                        <input type="checkbox" id="metodo-1" name="pa7_2[]" value="1">
-                        <label for="metodo-1">Leer</label><br>
-                        <input type="checkbox" id="metodo-2" name="pa7_2[]" value="2">
-                        <label for="metodo-2">Memorizar</label><br>
-                        <input type="checkbox" id="metodo-3" name="pa7_2[]" value="3">
-                        <label for="metodo-3">Hacer ejercicios sobre el tema</label><br>
-                        <input type="checkbox" id="metodo-4" name="pa7_2[]" value="4">
-                        <label for="metodo-4">Material de apoyo</label><br>
-                        <input type="checkbox" id="metodo-5" name="pa7_2[]" value="5">
-                        <label for="metodo-5">Cursos</label><br>
-                        <label for="metodo-6">Otro(s):</label>
-                        <input type="text" id="metodo-6" name="pa7_4">  
-                    </div>
-                    <div class="pregunta">
-                        <label>Si tú método no llegase a funcionar, ¿qué haces cuando no comprendes un tema?</label><br>
-                        <textarea id="accion" name="pa7_3" rows="2"></textarea>   
-                    </div> 
-                </fieldset>
-                <!--boton de enviar-->
-                <button type="submit" id="boton">Enviar</button>
-            </form>
-        </main>
-    </body>
-</html>
+                </header>
+                <main>
+                    <h2>No tienes una sesión activa</h2>
+                    <h3><a href="../templates/login.html">Ir a inicio de sesión.</a></h3>
+                </main>
+            </body>
+        </html>
+<?php
+    }
+?>
